@@ -1,0 +1,46 @@
+services:
+  node-dual-stack:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.10
+        ipv6_address: 2001:3984:3989::10
+    command:
+      - "node-dual-stack" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv6:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv6_address: 2001:3984:3989::20
+    command:
+      - "node-ipv6" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test:
+        - "CMD-SHELL"
+        - "redis-cli ping | grep PONG"
+    ports:
+      - "6379:6379"
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.254
+networks:
+  discv5-dual-stack-nw:
+    driver: bridge
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.238.0/24
+          gateway: 172.16.238.1
+        - subnet: 2001:3984:3989::/64
+          gateway: 2001:3984:3989::1
