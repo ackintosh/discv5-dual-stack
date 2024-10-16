@@ -5,6 +5,8 @@ edition = "2021"
 
 [dependencies]
 discv5 = "0.8.0"
+#discv5 = { git = "https://github.com/ackintosh/discv5.git", rev = "0731f03fed113cb99e5bda8e89c49db2e3be6d1c"}
+if-addrs = "0.13"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 rand = "0.8"

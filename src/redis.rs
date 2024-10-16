@@ -48,4 +48,8 @@ impl RedisClient {
             count = self.inner.get(key).await.unwrap();
         }
     }
+
+    pub(crate) async fn remove(&mut self, key: &str) {
+        self.inner.del::<&str, String>(key).await.unwrap();
+    }
 }

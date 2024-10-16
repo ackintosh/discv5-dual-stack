@@ -11,7 +11,7 @@ services:
     depends_on:
       redis:
         condition: service_healthy
-  node-ipv6:
+  node-ipv6-1:
     build:
       context: .
     networks:
@@ -19,6 +19,193 @@ services:
         ipv6_address: 2001:3984:3989::20
     command:
       - "node-ipv6" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv6-2:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv6_address: 2001:3984:3989::30
+    command:
+      - "node-ipv6" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-1:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.101
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-2:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.102
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-3:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.103
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-4:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.104
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-5:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.105
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-6:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.106
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-7:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.107
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-8:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.108
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-9:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.109
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-10:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.110
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-11:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.111
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-12:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.112
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-13:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.113
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-14:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.114
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-15:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.115
+    command:
+      - "node-ipv4" # actor
+    depends_on:
+      redis:
+        condition: service_healthy
+  node-ipv4-16:
+    build:
+      context: .
+    networks:
+      discv5-dual-stack-nw:
+        ipv4_address: 172.16.238.116
+    command:
+      - "node-ipv4" # actor
     depends_on:
       redis:
         condition: service_healthy

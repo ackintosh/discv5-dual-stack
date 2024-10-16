@@ -357,6 +357,7 @@ name = "discv5-dual-stack"
 version = "0.1.0"
 dependencies = [
  "discv5",
+ "if-addrs",
  "rand",
  "rand_xorshift",
  "redis",
@@ -692,6 +693,16 @@ checksum = "634d9b1461af396cad843f47fdba5597a4f9e6ddd4bfb6ff5d85028c25cb12f6"
 dependencies = [
  "unicode-bidi",
  "unicode-normalization",
+]
+
+[[package]]
+name = "if-addrs"
+version = "0.13.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a78a89907582615b19f6f0da1af18abf6ff08be259395669b834b057a7ee92d8"
+dependencies = [
+ "libc",
+ "windows-sys",
 ]
 
 [[package]]
