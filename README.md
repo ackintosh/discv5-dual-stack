@@ -1,5 +1,7 @@
 # discv5-dual-stack
 
+A simulation with IPv4/IPv6 dual-stack nodes.
+
 ```mermaid
 sequenceDiagram
     Node(dual-stack)->>Node(IPv4) * 16: FINDNODE(distance:[0])
